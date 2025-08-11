@@ -1,0 +1,35 @@
+// tsconfig.json
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx", // This is correct for modern React
+
+    /* Type Checking */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    // Fix for "Cannot find type definition file for 'node'"
+    // Explicitly list the types you need for a browser environment.
+    // This prevents TypeScript from implicitly trying to find 'node' types.
+    "types": ["react", "react-dom"]
+  },
+  "include": ["src"], // Ensure your source files are in the 'src' directory
+  // If you have a separate tsconfig.node.json for server-side code or build scripts,
+  // ensure it's correctly configured for Node.js environments.
+  // For a purely frontend app, you might not need the "references" line pointing to tsconfig.node.json
+  // unless you have specific Node.js files within your project that need separate compilation.
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
