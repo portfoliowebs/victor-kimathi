@@ -1,0 +1,12 @@
+/* PLEASE NOTE: THESE TAILWIND IMPORTS SHOULD NEVER BE DELETED */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+/* DO NOT DELETE THESE TAILWIND IMPORTS, OTHERWISE THE STYLING WILL NOT RENDER AT ALL */
+
+/* src/index.css or your global CSS file */
+.bg-pattern-light {
+    background-image: url('/path/to/your/light-pattern.svg'); /* Replace with your pattern */
+    background-size: cover; /* or contain, repeat, etc. */
+    background-position: center;
+  }
